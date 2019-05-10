@@ -10,9 +10,10 @@ namespace Process.bonApetitCrawler
         public static string BaseURL {get; set;} 
         static void Main(string[] args)
         {
-            BaseURL = "https://www.bonappetit.com/";
-            //Go to The Recipes page
-            ScrapingBrowser browser = new ScrapingBrowser();
+
+                BaseURL = "https://www.bonappetit.com/";
+                //Go to The Recipes page
+                ScrapingBrowser browser = new ScrapingBrowser();
 
                 //set UseDefaultCookiesParser as false if a website returns invalid cookies format
                 //browser.UseDefaultCookiesParser = false;
@@ -23,8 +24,16 @@ namespace Process.bonApetitCrawler
                 var recipeCards = recipesPage.Html.CssSelect(".card-hed a").ToList();
                 foreach (var recipe in recipeCards)
                 {
-                    System.Console.WriteLine(recipe.InnerHtml);
-                    System.Console.WriteLine(recipe.Attributes["href"].Value);
+                    WebPage recipePage = browser.NavigateToPage(new Uri(BaseURL + recipe.Attributes["href"].Value));
+                    var html = recipePage.Html;
+                    var name =  html.CssSelect("h1.post__header__hed a").FirstOrDefault().InnerHtml;
+                    var ingredients = html.CssSelect("li.ingredient div").ToList();
+                    System.Console.WriteLine(name);
+                    foreach (var ingredient in ingredients)
+                    {
+                     System.Console.WriteLine(ingredient.InnerHtml);   
+                    }
+                    
                 }
 
                 System.Console.WriteLine("Done reading Recipes, press any key to close");
