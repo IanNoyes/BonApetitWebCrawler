@@ -12,15 +12,22 @@ namespace Recipes.Data.Entities {
         protected override void OnModelCreating (ModelBuilder modelBuilder) {
             base.OnModelCreating (modelBuilder);
 
-            modelBuilder.Entity<Recipe> (entity => {
-                entity.HasKey (e => e.RecipeId);
-                // entity.Property (e => e.UniqueId)
-                //     .HasDefaultValueSql ("newid()");
-            });
+            modelBuilder.Entity<Recipe> (
+                //     entity => {
+                //     entity.HasKey (e => e.RecipeId);
+                // }
+            );
 
-            modelBuilder.Entity<Ingredient> (entity => {
-                entity.HasKey (e => e.IngredientId);
-            });
+            modelBuilder.Entity<Recipe> ().Property (entity => entity.RecipeId).ValueGeneratedOnAdd ();
+
+            modelBuilder.Entity<Ingredient> (
+                //     entity => {
+                //     entity.HasKey (e => e.IngredientId);
+                // }
+            );
+
+            modelBuilder.Entity<Ingredient> ().Property (entity => entity.IngredientId).ValueGeneratedOnAdd ();
+
         }
     }
 }
