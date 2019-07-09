@@ -15,5 +15,10 @@
   <ItemGroup>
     <ProjectReference Include="..\Process.BonApetitCrawler\bonApetitCrawler.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="TestJson.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content> 
+  </ItemGroup>
 
 </Project>

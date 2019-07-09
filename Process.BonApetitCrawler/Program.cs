@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using Process.BonApetitCrawler;
 using Recipes.Data.Entities;
 using ScrapySharp.Extensions;
 using ScrapySharp.Network;
+using Newtonsoft.Json;
 
-namespace Process.bonApetitCrawler
+namespace Process.BonApetitCrawler
 {
     class Program
     {
@@ -17,7 +19,12 @@ namespace Process.bonApetitCrawler
             {
                 context.Database.EnsureCreated();
             }
-            //TODO: Map Recipe To DB with Ingredients
+
+            var crawler = new RecipeCrawler();
+            crawler.page = 1;
+            var res = crawler.GetRecipeResponseAsync();
+            res.Wait();
+
             //TODO: After each recipe go to the next page in the recipes
             BaseURL = "https://www.bonappetit.com/";
             //Go to The Recipes page
@@ -74,6 +81,12 @@ namespace Process.bonApetitCrawler
             result.IngredientName = ingredient.InnerHtml;
             return result;
 
+        }
+
+        public string RecipePageRequest()
+        {
+
+            return "";
         }
     }
 }

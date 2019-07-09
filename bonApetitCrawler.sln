@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bonApetitCrawler", "Process
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Recipes.Data.Entities", "Recipes.Data.Entities\Recipes.Data.Entities.csproj", "{B344AD53-3185-423F-BDCF-D53DA46239F7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests.BonApetitCrawler", "Tests.BonApetitCrawler\Tests.BonApetitCrawler.csproj", "{BBB6B3D7-7F60-44C5-B77B-88AE4910CF6C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,5 +46,17 @@ Global
 		{B344AD53-3185-423F-BDCF-D53DA46239F7}.Release|x64.Build.0 = Release|Any CPU
 		{B344AD53-3185-423F-BDCF-D53DA46239F7}.Release|x86.ActiveCfg = Release|Any CPU
 		{B344AD53-3185-423F-BDCF-D53DA46239F7}.Release|x86.Build.0 = Release|Any CPU
+		{BBB6B3D7-7F60-44C5-B77B-88AE4910CF6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBB6B3D7-7F60-44C5-B77B-88AE4910CF6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBB6B3D7-7F60-44C5-B77B-88AE4910CF6C}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{BBB6B3D7-7F60-44C5-B77B-88AE4910CF6C}.Debug|x64.Build.0 = Debug|Any CPU
+		{BBB6B3D7-7F60-44C5-B77B-88AE4910CF6C}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{BBB6B3D7-7F60-44C5-B77B-88AE4910CF6C}.Debug|x86.Build.0 = Debug|Any CPU
+		{BBB6B3D7-7F60-44C5-B77B-88AE4910CF6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBB6B3D7-7F60-44C5-B77B-88AE4910CF6C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BBB6B3D7-7F60-44C5-B77B-88AE4910CF6C}.Release|x64.ActiveCfg = Release|Any CPU
+		{BBB6B3D7-7F60-44C5-B77B-88AE4910CF6C}.Release|x64.Build.0 = Release|Any CPU
+		{BBB6B3D7-7F60-44C5-B77B-88AE4910CF6C}.Release|x86.ActiveCfg = Release|Any CPU
+		{BBB6B3D7-7F60-44C5-B77B-88AE4910CF6C}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
